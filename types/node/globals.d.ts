@@ -9,6 +9,12 @@ type _FormData = typeof globalThis extends { onmessage: any } ? {} : import("und
 type _Headers = typeof globalThis extends { onmessage: any } ? {} : import("undici-types").Headers;
 type _RequestInit = typeof globalThis extends { onmessage: any } ? {}
     : import("undici-types").RequestInit;
+type _HeadersInit = typeof globalThis extends { onmessage: any } ? {} : import("undici-types").HeadersInit;
+type _BodyInit = typeof globalThis extends { onmessage: any } ? {} : import("undici-types").BodyInit;
+type _RequestRedirect = typeof globalThis extends { onmessage: any } ? {} : import("undici-types").RequestRedirect;
+type _RequestCredentials = typeof globalThis extends { onmessage: any } ? {} : import("undici-types").RequestCredentials;
+type _ReferrerPolicy = typeof globalThis extends { onmessage: any } ? {} : import("undici-types").ReferrerPolicy;
+type _RequestMode = typeof globalThis extends { onmessage: any } ? {} : import("undici-types").RequestMode;
 type _ResponseInit = typeof globalThis extends { onmessage: any } ? {}
     : import("undici-types").ResponseInit;
 type _File = typeof globalThis extends { onmessage: any } ? {} : import("node:buffer").File;
@@ -366,6 +372,12 @@ declare global {
     }
 
     interface RequestInit extends _RequestInit {}
+    interface HeadersInit extends _HeadersInit {}
+    interface BodyInit extends _BodyInit {}
+    interface RequestRedirect extends _RequestRedirect {}
+    interface ReferrerPolicy extends _ReferrerPolicy {}
+    interface RequestCredentials extends _RequestCredentials {}
+    interface RequestMode extends RequestMode {}
 
     function fetch(
         input: string | URL | globalThis.Request,
